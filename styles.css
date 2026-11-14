@@ -2339,3 +2339,52 @@ main:focus {
 @media print {
   .toast { display: none; }
 }
+
+/* Proof strip: the hairlines are borders on the items, not the grid background,
+   so an empty slot can never show up as a grey box. Works for any number of facts. */
+@media screen {
+  .proof-list {
+    grid-template-columns: 1fr;
+    gap: 0;
+    background: none;
+  }
+
+  .proof-item,
+  .proof-item:nth-child(2n) {
+    padding: var(--s-5) 0;
+    background: none;
+    border-top: var(--rule);
+  }
+
+  .proof-item:first-child {
+    border-top: 0;
+  }
+
+  @media (min-width: 640px) {
+    .proof-list {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .proof-item,
+    .proof-item:nth-child(2n) {
+      padding: var(--s-6) var(--s-5);
+      border-top: 0;
+    }
+
+    .proof-item:first-child {
+      padding-left: 0;
+    }
+
+    .proof-item + .proof-item {
+      border-left: var(--rule);
+    }
+  }
+}
+
+/* Show the hero photo on phones too (below the buttons). Desktop is unchanged. */
+@media screen and (max-width: 899px) {
+  .hero-photo {
+    display: block;
+    width: min(100%, 280px);
+  }
+}
