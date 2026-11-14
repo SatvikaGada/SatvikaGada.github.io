@@ -2309,3 +2309,33 @@ main:focus {
     overflow-wrap: anywhere;
   }
 }
+
+/* Toast: short message at the bottom of the screen (used by the email fallback). */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--s-6) + env(safe-area-inset-bottom, 0px));
+  z-index: 60;
+  max-width: min(92vw, 28rem);
+  padding: var(--s-3) var(--s-4);
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: var(--fs-sm);
+  line-height: 1.4;
+  text-align: center;
+  opacity: 0;
+  transform: translate(-50%, 8px);
+  pointer-events: none;
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.toast.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+@media print {
+  .toast { display: none; }
+}
