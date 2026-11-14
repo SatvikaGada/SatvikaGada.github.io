@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- Placeholder. TODO: replace with a real image of the same aspect ratio. -->
+  <rect width="800" height="600" fill="none"/>
+  <rect x="16" y="16" width="768" height="568" fill="none" stroke="#8A8A90" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="8 8"/>
+  <g fill="none" stroke="#8A8A90" stroke-opacity="0.5" stroke-width="2"><path d="M120 440l180-170 140 120 90-80 150 130"/><circle cx="560" cy="200" r="40"/></g>
+  <text x="400.0" y="552" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="20" letter-spacing="3" fill="#8A8A90">PHOTO 4:3</text>
+</svg>

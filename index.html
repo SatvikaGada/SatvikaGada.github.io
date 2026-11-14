@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Set the theme before first paint so there is no flash.
+       Saved choice wins; on a first visit follow the OS; otherwise dark. -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add("js");
+      var t = null;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (t !== "light" && t !== "dark") {
+        t = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      }
+      d.setAttribute("data-theme", t);
+    })();
+  </script>
+
+  <!-- Social crawlers do not run JavaScript, so these tags are static.
+       TODO: If you change the positioning line in content.js, update the description here too. -->
+  <title>Satvika Gada | Software Engineer, AI/ML and Full Stack</title>
+  <meta name="description" content="Satvika Gada is a B.Tech CSE student at SASTRA Deemed University (2027) building AI/ML and full-stack systems. Full Stack Developer Intern at Fidelity Investments in 2026.">
+  <meta name="author" content="Satvika Gada">
+
+  <!-- TODO: Replace https://satvikagada.github.io/ with your final domain in all tags below. -->
+  <link rel="canonical" href="https://satvikagada.github.io/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://satvikagada.github.io/">
+  <meta property="og:title" content="Satvika Gada | Software Engineer, AI/ML and Full Stack">
+  <meta property="og:description" content="B.Tech CSE at SASTRA (2027). AI/ML and full-stack projects, an IEEE paper, and a Fidelity Investments internship.">
+  <!-- TODO: Replace assets/og-image.png with your own 1200 x 630 image if you like. Must be an absolute URL. -->
+  <meta property="og:image" content="https://satvikagada.github.io/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Satvika Gada, software engineer building AI/ML and full-stack systems">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Satvika Gada | Software Engineer, AI/ML and Full Stack">
+  <meta name="twitter:description" content="B.Tech CSE at SASTRA (2027). AI/ML and full-stack projects, an IEEE paper, and a Fidelity Investments internship.">
+  <meta name="twitter:image" content="https://satvikagada.github.io/assets/og-image.png">
+
+  <meta name="theme-color" content="#0B0B0C">
+  <meta name="color-scheme" content="dark light">
+
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <!-- Fonts: Instrument Serif (display) + Inter (body). Mono labels use the system monospace stack. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Person schema. TODO: keep email/url in sync with content.js. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Satvika Gada",
+    "url": "https://satvikagada.github.io/",
+    "image": "https://satvikagada.github.io/assets/og-image.png",
+    "jobTitle": "Software Engineer",
+    "email": "mailto:satvikagada@gmail.com",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "SASTRA Deemed University"
+    },
+    "knowsAbout": ["Machine learning", "Full-stack development", "Spring Boot", "PyTorch", "Explainable AI"],
+    "sameAs": [
+      "https://github.com/SatvikaGada",
+      "https://linkedin.com/in/satvika-gada832"
+    ]
+  }
+  </script>
+
+  <script src="content.js" defer></script>
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Reading progress (decorative) -->
+  <div class="progress" aria-hidden="true"><div class="progress-bar" id="progress-bar"></div></div>
+
+  <!-- ===================== Header ===================== -->
+  <header class="site-header" id="site-header" data-utm="header">
+    <div class="container header-inner">
+      <a class="wordmark" href="#top" id="wordmark">Satvika Gada</a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="nav-list" id="nav-list"></ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Switch to light theme">
+          <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a class="btn btn--secondary btn--sm header-resume" href="assets/Satvika_Gada_Resume.pdf" data-resume>Resume</a>
+        <button class="icon-btn menu-toggle" type="button" id="menu-open" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 9h16M4 15h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== Mobile menu (full-screen overlay) ===================== -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menu" data-utm="menu" hidden>
+    <div class="mobile-menu-head">
+      <span class="wordmark" aria-hidden="true">Satvika Gada</span>
+      <button class="icon-btn" type="button" id="menu-close" aria-label="Close menu">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <nav aria-label="Mobile">
+      <ul class="mobile-nav-list" id="mobile-nav-list"></ul>
+    </nav>
+    <div class="mobile-menu-foot">
+      <a class="btn btn--secondary" href="assets/Satvika_Gada_Resume.pdf" data-resume>Resume</a>
+      <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Switch to light theme">
+        <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ===================== Main ===================== -->
+  <!-- Every section below is filled from content.js by main.js. -->
+  <main id="main" tabindex="-1">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container" id="hero-root"></div>
+    </section>
+
+    <section class="proof" aria-label="Highlights">
+      <div class="container" id="proof-root"></div>
+    </section>
+
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="container" id="work-root"></div>
+    </section>
+
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <div class="container" id="experience-root"></div>
+    </section>
+
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="container" id="skills-root"></div>
+    </section>
+
+    <section class="section" id="recognition" aria-labelledby="recognition-title">
+      <div class="container" id="recognition-root"></div>
+    </section>
+
+    <section class="section section--compact" id="beyond" aria-labelledby="beyond-title">
+      <div class="container" id="beyond-root"></div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container" id="about-root"></div>
+    </section>
+
+    <section class="section section--contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div id="contact-head"></div>
+        <div class="contact-grid grid">
+          <div class="contact-info" id="contact-info"></div>
+
+          <div class="contact-form-col">
+            <!-- The form is static HTML (not rendered by JS) so Netlify Forms can detect it at deploy time.
+                 TODO: choose the provider/endpoint in content.js -> contact.form. -->
+            <form class="form" id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="_gotcha" novalidate>
+              <input type="hidden" name="form-name" value="contact">
+
+              <!-- Honeypot: hidden from people, often filled by bots. -->
+              <div class="hp" aria-hidden="true">
+                <label for="hp-field">Leave this field empty</label>
+                <input id="hp-field" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="field">
+                <label for="f-name">Name</label>
+                <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-error">
+                <p class="field-error" id="f-name-error"></p>
+              </div>
+
+              <div class="field">
+                <label for="f-email">Email</label>
+                <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="f-email-error">
+                <p class="field-error" id="f-email-error"></p>
+              </div>
+
+              <div class="field">
+                <label for="f-message">Message</label>
+                <textarea id="f-message" name="message" rows="6" required aria-describedby="f-message-error"></textarea>
+                <p class="field-error" id="f-message-error"></p>
+              </div>
+
+              <button class="btn btn--secondary form-submit" type="submit" id="form-submit">
+                <span class="form-submit-label">Send message</span>
+              </button>
+            </form>
+
+            <div class="form-status" id="form-status" role="status" aria-live="polite" tabindex="-1"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="site-footer" data-utm="footer">
+    <div class="container footer-inner" id="footer-root"></div>
+  </footer>
+
+  <!-- ===================== Floating actions ===================== -->
+  <div class="float-actions" data-utm="floating">
+    <a class="icon-btn to-top" href="#top" id="to-top" aria-label="Back to top">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+    </a>
+    <a class="fab-email" id="fab-email" href="mailto:satvikagada@gmail.com">
+      <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg>
+      <span>Email</span>
+    </a>
+  </div>
+
+  <!-- ===================== Case study modal ===================== -->
+  <dialog class="case" id="case-study" aria-labelledby="case-title">
+    <div class="case-inner" id="case-root"></div>
+  </dialog>
+
+  <!-- Polite announcements (copy email, etc.) -->
+  <div class="visually-hidden" id="announcer" aria-live="polite"></div>
+
+  <noscript>
+    <div class="noscript container">
+      <p>This site needs JavaScript to show its content. You can still reach Satvika at
+        <a href="https://github.com/SatvikaGada">GitHub</a> or
+        <a href="https://linkedin.com/in/satvika-gada832">LinkedIn</a>.</p>
+    </div>
+  </noscript>
+</body>
+</html>

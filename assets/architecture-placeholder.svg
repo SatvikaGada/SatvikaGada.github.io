@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <!-- Placeholder. TODO: replace with a real image of the same aspect ratio. -->
+  <rect width="1600" height="900" fill="none"/>
+  <rect x="16" y="16" width="1568" height="868" fill="none" stroke="#8A8A90" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="8 8"/>
+  <g fill="none" stroke="#8A8A90" stroke-opacity="0.5" stroke-width="2"><rect x="160" y="320" width="260" height="140"/><rect x="670" y="320" width="260" height="140"/><rect x="1180" y="200" width="260" height="140"/><rect x="1180" y="440" width="260" height="140"/><path d="M420 390h250M930 390l250-120M930 390l250 120"/></g><g fill="#C8102E"><rect x="664" y="386" width="8" height="8"/></g>
+  <text x="800.0" y="852" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="40" letter-spacing="3" fill="#8A8A90">ARCHITECTURE DIAGRAM 16:9</text>
+</svg>
