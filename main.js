@@ -983,6 +983,43 @@
     });
   }
 
+     // Email links: if no mail app opens, copy the address and say so.
+  function initMailtoFallback() {
+    const toast = document.createElement("div");
+    toast.className = "toast";
+    toast.setAttribute("role", "status");
+    document.body.appendChild(toast);
+    let hideTimer;
+    const show = (msg) => {
+      toast.textContent = msg;
+      toast.classList.add("is-visible");
+      window.clearTimeout(hideTimer);
+      hideTimer = window.setTimeout(() => toast.classList.remove("is-visible"), 5000);
+    };
+    document.addEventListener("click", (e) => {
+      const a = e.target.closest('a[href^="mailto:"]');
+      if (!a) return;
+      const email = a.getAttribute("href").replace(/^mailto:/, "").split("?")[0];
+      let left = false;
+      const mark = () => { left = true; };
+      window.addEventListener("blur", mark, { once: true });
+      document.addEventListener("visibilitychange", mark, { once: true });
+      window.setTimeout(async () => {
+        window.removeEventListener("blur", mark);
+        document.removeEventListener("visibilitychange", mark);
+        if (left) return; // a mail app took focus, so it worked
+        let ok = false;
+        try {
+          await navigator.clipboard.writeText(email);
+          ok = true;
+        } catch (err) {
+          ok = false;
+        }
+        show(ok ? "No email app opened. Address copied: " + email : "No email app opened. Write to " + email);
+      }, 1200);
+    });
+  }
+
   /* 4. Init ------------------------------------------------------------------------ */
   renderHeader();
   renderHero();
@@ -994,6 +1031,7 @@
   renderBeyond();
   renderAbout();
   renderContact();
+  initMailtoFallback();
   renderFooter();
 
   decorateLinks();
