@@ -51,7 +51,7 @@ const CONTENT = {
     secondaryCta: { label: "Email me" },
     // TODO: Replace with your photo. Keep a 4:5 crop (e.g. 800 x 1000) and update width/height to match.
     photo: {
-      src: "assets/photo-hero.jpg",
+      src: "assets/photo-hero.jpeg",
       alt: "Portrait of Satvika Gada",
       width: 800,
       height: 1000,
